@@ -2,9 +2,12 @@ A day at a coffee shop!
 
 A customer visits a coffee shop that sells a bunch of items (e.g. beverages, sandwiches, etc.). The candidate would be designing and developing the system on behalf of the Barista.
 
-Items have varying tax rates and some are free or offered at a discount when ordered with another item. 
-The customer is made aware of the combos or discounts based on the products he/she selects. 
-Tax is applied on the product, Discount on the actual item price and then the bill amount is summed up.
+1. Items have varying tax rates and 
+2. some are free or offered at a discount when ordered with another item. 
+3. The customer is made aware of the combos or discounts based on the products he/she selects. 
+4. Tax is applied on the product, Discount on the actual item price and 
+5. then the bill amount is summed up.
+
 Discounts /Free offers are provided as single items or as combos. Discounts/Free offers cannot overlap/be combined.
 For example if bread and Coffee have a discount of x% and if bread and juice have y%, if a customer buys bread, coffee, and juice either a discount of a OR b would be allowed, not a+b.
 
