@@ -1,5 +1,10 @@
+// react lib
+import { useState } from "react";
+// css
 import "./App.css";
+// components
 import Menu from "./components/Menu";
+
 
 const initialMenu = [
   {
@@ -45,12 +50,21 @@ const initialMenu = [
 ];
 
 function App() {
+  const [cartItems,setCartItems] = useState([]);
+
+  const handleAddBtn = (menuItem) => {
+    // console.log("menuItem: ", menuItem);
+    const cartArr = [...cartItems, menuItem];
+    // console.log("cart arr: ",cartArr);
+    setCartItems(cartArr);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <div>BARISTA</div>
       </header>
-      <Menu menuList={initialMenu} />
+      <Menu menuList={initialMenu} handleAddBtnEvent={handleAddBtn}/>
     </div>
   );
 }
