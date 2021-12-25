@@ -12,6 +12,7 @@ code {
     monospace;
 }
 /* menu */
+/* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/ */
 .menu {
   align-items: center;
   border: 1px solid darkblue;
@@ -20,22 +21,34 @@ code {
   margin: 3px;
 }
 
-.menu-title {
+.menu__title {
   align-items: center;
   margin-bottom: 20px;
 }
 
-.menu-list {
+.menu__list {
   margin: 10px;
 }
 
-.menu-item {
+.menu__item {
   background-color: #fff;
   border: 1px solid #f2f2f2;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  padding: 5px;
+  min-width: 160px;
+}
+.menu__item--label{
+  margin: 0px;
+  float: left;
 }
 
-.menu-item:hover {
+.menu__item--content{
+  margin: 0px;
+  float: right;
+}
+
+.menu__item:hover {
   box-shadow: 0 0 4px #b6b6b6;
 }

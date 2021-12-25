@@ -5,7 +5,6 @@ const initialMenu = [
   {
     itemName: "Bread",
     cost: "3",
-    offer: "pay",
     tax: "1%",
     discount: "0%",
     combo: [
@@ -22,21 +21,24 @@ const initialMenu = [
   {
     itemName: "Coffee",
     cost: "10",
-    offer: "pay",
     tax: "2%",
     discount: "0%",
   },
   {
     itemName: "Juice",
     cost: "15",
-    offer: "pay",
     tax: "2%",
     discount: "0%",
   },
   {
     itemName: "Cream",
     cost: "0",
-    offer: "free",
+    tax: "0%",
+    discount: "0%",
+  },
+  {
+    itemName: "Sugar",
+    cost: "0",
     tax: "0%",
     discount: "0%",
   },
