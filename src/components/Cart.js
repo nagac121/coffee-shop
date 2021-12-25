@@ -3,7 +3,7 @@ import AddSharpIcon from "@mui/icons-material/AddSharp";
 import RemoveSharpIcon from "@mui/icons-material/RemoveSharp";
 
 const Cart = ({ cartData }) => {
-  console.log("cart data: ", cartData);
+  // console.log("cart data: ", cartData);
   return (
     <div className="cart">
       <header>CART ITEMS</header>
@@ -19,7 +19,7 @@ const Cart = ({ cartData }) => {
                 className="cart__item--qty"
                 disabled={true}
                 type="text"
-                value=""
+                value={cartItem.cartCount}
               />
               <IconButton color="primary">
                 <AddSharpIcon className="cart__item--qty-icon" />

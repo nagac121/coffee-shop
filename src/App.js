@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 
 const initialMenu = [
   {
+    itemId: 1,
     itemName: "Bread",
     cost: "3",
     tax: "1%",
@@ -22,30 +23,39 @@ const initialMenu = [
         discount: "3%",
       },
     ],
+    cartCount: 0,
   },
   {
+    itemId: 2,
     itemName: "Coffee",
     cost: "10",
     tax: "2%",
     discount: "0%",
+    cartCount: 0,
   },
   {
+    itemId: 3,
     itemName: "Juice",
     cost: "15",
     tax: "2%",
     discount: "0%",
+    cartCount: 0,
   },
   {
+    itemId: 4,
     itemName: "Cream",
     cost: "0",
     tax: "0%",
     discount: "0%",
+    cartCount: 0,
   },
   {
+    itemId: 5,
     itemName: "Sugar",
     cost: "0",
     tax: "0%",
     discount: "0%",
+    cartCount: 0,
   },
 ];
 
@@ -53,10 +63,19 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddBtn = (menuItem) => {
-    // console.log("menuItem: ", menuItem);
-    const cartArr = [...cartItems, menuItem];
-    // console.log("cart arr: ",cartArr);
-    setCartItems(cartArr);
+    let isExist = false;
+    // console.log("cartItems: ", cartItems);
+    let cartItemsArr = [...cartItems];
+    for (let i = 0; i < cartItemsArr.length; i++) {
+      if (cartItemsArr[i].itemId === menuItem.itemId) {
+        cartItemsArr[i].cartCount++;
+        isExist = true;
+        break;
+      }
+    }
+    cartItemsArr = isExist ? [...cartItemsArr] : [...cartItemsArr, menuItem];
+    // console.log("cartItemsArr: ", cartItemsArr);
+    setCartItems(cartItemsArr);
   };
 
   return (
