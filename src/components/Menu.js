@@ -8,21 +8,24 @@ import Box from "@mui/material/Box";
 const Menu = ({ menuList }) => {
   console.log("menu: ", menuList);
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" padding={1}>
-      <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      className="menu"
+    >
+      <Typography variant="h6" component="div">
         menu
       </Typography>
-      {/* <Stack spacing={2} alignItems="center"> */}
       <List dense={true}>
         {menuList.map((menuItem, index) => {
           return (
-            <ListItem key={index}>
+            <ListItem key={index} className="menu-item">
               <ListItemText primary={menuItem.itemName} />
             </ListItem>
           );
         })}
       </List>
-      {/* </Stack> */}
     </Box>
   );
 };
