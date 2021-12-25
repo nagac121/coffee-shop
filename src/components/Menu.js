@@ -2,12 +2,12 @@ import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 
-const Menu = ({ menuList, handleAddBtnEvent }) => {
+const Menu = ({ menuData, handleAddBtnEvent }) => {
   return (
     <div className="menu">
       <div className="menu__title">MENU</div>
       <div className="menu__list">
-        {menuList.map((menuItem, index) => {
+        {menuData.map((menuItem, index) => {
           return (
             <div key={index} className="menu__item">
               <div>

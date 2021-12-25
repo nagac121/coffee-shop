@@ -11,6 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* app */
+.app__sections{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 /* menu */
 /* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/ */
 .menu {
@@ -18,7 +24,9 @@ code {
   border: 1px solid darkblue;
   display: flex;
   flex-direction: column;
+  height: 80vh;
   margin: 3px;
+  overflow: scroll;
 }
 
 .menu__title {
@@ -37,7 +45,7 @@ code {
   flex-direction: column;
   margin-bottom: 10px;
   padding: 5px;
-  min-width: 160px;
+  min-width: 200px;
 }
 .menu__item--label{
   margin: 0px;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./App.css";
 // components
 import Menu from "./components/Menu";
-
+import Cart from "./components/Cart";
 
 const initialMenu = [
   {
@@ -50,21 +50,24 @@ const initialMenu = [
 ];
 
 function App() {
-  const [cartItems,setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleAddBtn = (menuItem) => {
     // console.log("menuItem: ", menuItem);
     const cartArr = [...cartItems, menuItem];
     // console.log("cart arr: ",cartArr);
     setCartItems(cartArr);
-  }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <div>BARISTA</div>
       </header>
-      <Menu menuList={initialMenu} handleAddBtnEvent={handleAddBtn}/>
+      <div className="app__sections">
+        <Menu menuData={initialMenu} handleAddBtnEvent={handleAddBtn} />
+        <Cart cartData={cartItems} />
+      </div>
     </div>
   );
 }
