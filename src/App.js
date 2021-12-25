@@ -3,38 +3,38 @@ import Menu from "./components/Menu";
 
 const initialMenu = [
   {
-    itemName: "bread",
+    itemName: "Bread",
     cost: "3",
     offer: "pay",
     tax: "1%",
     discount: "0%",
     combo: [
       {
-        item: "coffee",
+        item: "Coffee",
         discount: "2%",
       },
       {
-        item: "juice",
+        item: "Juice",
         discount: "3%",
       },
     ],
   },
   {
-    itemName: "coffee",
+    itemName: "Coffee",
     cost: "10",
     offer: "pay",
     tax: "2%",
     discount: "0%",
   },
   {
-    itemName: "juice",
+    itemName: "Juice",
     cost: "15",
     offer: "pay",
     tax: "2%",
     discount: "0%",
   },
   {
-    itemName: "cream",
+    itemName: "Cream",
     cost: "0",
     offer: "free",
     tax: "0%",

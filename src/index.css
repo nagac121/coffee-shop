@@ -13,16 +13,18 @@ code {
 }
 /* menu */
 .menu {
-  border: 2px solid maroon;
+  border: 1px solid darkblue;
   margin: 3px;
 }
 
 .menu-item {
   background-color: #fff;
   border: 1px solid #f2f2f2;
-  float: left;
-  margin: 2px;
-  padding: 5px;
+  /* float: left; */
+  margin: 5px;
+  padding: 1px;
+  /* width: 100px; */
+  margin-right: 50px;
 }
 
 .menu-item:hover {
