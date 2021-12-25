@@ -94,6 +94,11 @@ function App() {
         break;
       }
     }
+    if (removeItem.cartCount === 0) {
+      cartItemsArr = cartItemsArr.filter(
+        (element) => removeItem.itemId !== element.itemId
+      );
+    }
     // console.log("cartItemsArr: ", cartItemsArr);
     setCartItems(cartItemsArr);
   };
