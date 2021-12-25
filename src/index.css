@@ -13,18 +13,27 @@ code {
 }
 /* menu */
 .menu {
+  align-items: center;
   border: 1px solid darkblue;
+  display: flex;
+  flex-direction: column;
   margin: 3px;
+}
+
+.menu-title {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  margin: 10px;
 }
 
 .menu-item {
   background-color: #fff;
   border: 1px solid #f2f2f2;
-  /* float: left; */
-  margin: 5px;
-  padding: 1px;
-  /* width: 100px; */
-  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-item:hover {

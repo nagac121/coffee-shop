@@ -1,40 +1,32 @@
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Menu = ({ menuList }) => {
   console.log("menu: ", menuList);
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      className="menu"
-    >
-      <Typography variant="h6" component="div">
-        menu
-      </Typography>
-      <List dense={true}>
+    <div className="menu">
+      <div className="menu-title">MENU</div>
+      <div className="menu-list">
         {menuList.map((menuItem, index) => {
           return (
-            <ListItem key={index} className="menu-item">
-              <ListItemText primary={menuItem.itemName} sx={{m:0,p:0}}/>
+            <div key={index} className="menu-item">
+              <div>
+                <p>Item Name: </p>
+                <p>{menuItem.itemName}</p>
+              </div>
+              <div>{menuItem.cost}</div>
               <Button
                 variant="outlined"
                 endIcon={<AddShoppingCartIcon fontSize="small" />}
-                sx={{m:0, p:0}}
+                sx={{ m: 0, p: 0 }}
               >
                 Add
               </Button>
-            </ListItem>
+            </div>
           );
         })}
-      </List>
-    </Box>
+      </div>
+    </div>
   );
 };
 export default Menu;
