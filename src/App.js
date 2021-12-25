@@ -50,7 +50,7 @@ function App() {
       <header className="App-header">
         <div>BARISTA</div>
       </header>
-      <Menu menuList={initialMenu} className="menu" />
+      <Menu menuList={initialMenu} />
     </div>
   );
 }

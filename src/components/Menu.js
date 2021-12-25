@@ -1,8 +1,17 @@
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
+import { useState } from "react";
+
 const Menu = ({ menuList }) => {
-  console.log("menu: ", menuList);
+  const [cartItems,setCartItems] = useState([]);
+
+  const handleAddBtn = (menuItem) => {
+    // console.log("menuItem: ", menuItem);
+    const cartArr = [...cartItems, menuItem];
+    // console.log("cart arr: ",cartArr);
+    setCartItems(cartArr);
+  }
   return (
     <div className="menu">
       <div className="menu__title">MENU</div>
@@ -26,6 +35,7 @@ const Menu = ({ menuList }) => {
                 variant="outlined"
                 endIcon={<AddShoppingCartIcon fontSize="small" />}
                 sx={{ mt: 1, p: 0 }}
+                onClick={() => handleAddBtn(menuItem)}
               >
                 Add
               </Button>
