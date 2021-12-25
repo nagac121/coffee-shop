@@ -31,6 +31,12 @@ const Cart = ({ cartData, handleAddBtnEvent, handleRemoveBtnEvent }) => {
                 <AddSharpIcon className="cart__item--qty-icon" />
               </IconButton>
             </span>
+            <div>
+              <span>Item Cost with tax: </span>
+              <span>
+                {cartItem.cartCount * (cartItem.cost +  (cartItem.taxPercent / 100))}
+              </span>
+            </div>
           </div>
         );
       })}

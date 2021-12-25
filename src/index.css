@@ -1,3 +1,4 @@
+/* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/ */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,7 +19,6 @@ code {
   justify-content: flex-start;
 }
 /* menu */
-/* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/ */
 .menu {
   align-items: center;
   border: 1px solid darkblue;
@@ -27,11 +27,6 @@ code {
   height: 80vh;
   margin-left: 10px;
   overflow: scroll;
-}
-
-.menu__title {
-  align-items: center;
-  margin-bottom: 20px;
 }
 
 .menu__list {
@@ -64,11 +59,23 @@ code {
 /* cart */
 .cart {
   border: 1px solid darkblue;
-  height: 40vh;
+  height: 50vh;
   margin: 0px 10px 10px 50px;
+  overflow: scroll;
   padding: 5px;
-  width: 200px;
+  width: 250px;
 }
+
+.cart__item {
+  background: #f9eddd;
+  margin: 5px;
+  padding: 5px 10px 10px;
+}
+
+/* .cart__item--label{
+  margin: 0px 0px 10px 0px;
+  text-align: right;
+} */
 
 .cart__item--qty-icon {
   vertical-align: middle;

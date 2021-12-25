@@ -5,7 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 const Menu = ({ menuData, handleAddBtnEvent }) => {
   return (
     <div className="menu">
-      <div className="menu__title">MENU</div>
+      <div>MENU</div>
       <div className="menu__list">
         {menuData.map((menuItem, index) => {
           return (
@@ -20,7 +20,7 @@ const Menu = ({ menuData, handleAddBtnEvent }) => {
               </div>
               <div>
                 <p className="menu__item--label">Sales Tax: </p>
-                <p className="menu__item--content">{menuItem.tax}</p>
+                <p className="menu__item--content">{menuItem.taxPercent}%</p>
               </div>
               <Button
                 variant="outlined"
