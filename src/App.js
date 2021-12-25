@@ -62,18 +62,38 @@ const initialMenu = [
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const handleAddBtn = (menuItem) => {
+  const handleAddBtn = (addItem) => {
+    // console.log("handleAddBtn");
     let isExist = false;
     // console.log("cartItems: ", cartItems);
     let cartItemsArr = [...cartItems];
     for (let i = 0; i < cartItemsArr.length; i++) {
-      if (cartItemsArr[i].itemId === menuItem.itemId) {
+      if (addItem.itemId === cartItemsArr[i].itemId) {
         cartItemsArr[i].cartCount++;
         isExist = true;
         break;
       }
     }
-    cartItemsArr = isExist ? [...cartItemsArr] : [...cartItemsArr, menuItem];
+
+    if (!isExist) {
+      addItem.cartCount++;
+    }
+
+    cartItemsArr = isExist ? [...cartItemsArr] : [...cartItemsArr, addItem];
+    // console.log("cartItemsArr: ", cartItemsArr);
+    setCartItems(cartItemsArr);
+  };
+
+  const handleRemoveBtn = (removeItem) => {
+    // console.log("handleRemoveBtn");
+    // console.log("cartItems: ", cartItems);
+    let cartItemsArr = [...cartItems];
+    for (let i = 0; i < cartItemsArr.length; i++) {
+      if (removeItem.itemId === cartItemsArr[i].itemId) {
+        cartItemsArr[i].cartCount--;
+        break;
+      }
+    }
     // console.log("cartItemsArr: ", cartItemsArr);
     setCartItems(cartItemsArr);
   };
@@ -85,7 +105,11 @@ function App() {
       </header>
       <div className="app__sections">
         <Menu menuData={initialMenu} handleAddBtnEvent={handleAddBtn} />
-        <Cart cartData={cartItems} />
+        <Cart
+          cartData={cartItems}
+          handleAddBtnEvent={handleAddBtn}
+          handleRemoveBtnEvent={handleRemoveBtn}
+        />
       </div>
     </div>
   );
