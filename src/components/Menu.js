@@ -5,7 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 const Menu = ({ menuData, handleAddBtnEvent }) => {
   return (
     <div className="menu">
-      <div>MENU</div>
+      <header>MENU</header>
       <div className="menu__list">
         {menuData.map((menuItem, index) => {
           return (

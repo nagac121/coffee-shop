@@ -16,7 +16,7 @@ const Cart = ({
         return (
           <div className="cart__item" key={index}>
             <span>{cartItem.itemName}</span>
-            <span className="cart-qty-section">
+            <span>
               <IconButton
                 color="primary"
                 onClick={() => handleRemoveBtnEvent(cartItem)}
@@ -24,7 +24,7 @@ const Cart = ({
                 <RemoveSharpIcon className="cart__item--qty-icon" />
               </IconButton>
               <input
-                className="cart__item--qty"
+                className="cart__item--qty-ip"
                 disabled={true}
                 type="text"
                 value={cartItem.cartCount}
@@ -48,12 +48,12 @@ const Cart = ({
       })}
       <div>
         {Math.round(cartCost) ? (
-          <>
-            <span>Total Cost</span>
+          <div className="cart__item--cartTotal">
+            <span>Total Cost: </span>
             <span>{cartCost}</span>
-          </>
+          </div>
         ) : (
-          <div className="cart__item--cart-empty-msg">Add cart items!</div>
+          <div className="cart__item--cart-empty-msg">Add cart items !</div>
         )}
       </div>
     </div>

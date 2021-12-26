@@ -12,6 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+header {
+  font-weight: bold;
+  text-decoration: underline;
+  color: brown;
+}
 /* app */
 .app__sections {
   display: flex;
@@ -72,7 +78,7 @@ code {
   padding: 5px 10px 10px;
 }
 
-.cart__item--cart-empty-msg{
+.cart__item--cart-empty-msg {
   margin: 50px;
   background: lightgoldenrodyellow;
 }
@@ -81,12 +87,13 @@ code {
   vertical-align: middle;
 }
 
-.cart__item--qty {
+.cart__item--qty-ip {
   background: lightgoldenrodyellow;
-}
-
-.cart__item--qty {
   font-weight: bold;
   text-align: center;
   width: 20px;
+}
+
+.cart__item--cartTotal{
+  margin-top: 10px;
 }
