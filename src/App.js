@@ -67,11 +67,13 @@ function App() {
     // console.log("cartItems: ", cartItems);
     const totalCartAmt = cartItems.reduce((acc, current) => {
       // console.log("current: ",current);
-      acc += current.cartCount * (current.cost + current.cost * (current.taxPercent / 100));
+      acc +=
+        current.cartCount *
+        (current.cost + current.cost * (current.taxPercent / 100));
       return acc;
     }, 0);
     // console.log("totalCartAmt: ", totalCartAmt.toFixed(2));
-    setCartCost(totalCartAmt.toFixed(2))
+    setCartCost(totalCartAmt.toFixed(2));
   }, [cartItems]);
 
   const handleAddBtn = (addItem) => {
@@ -124,7 +126,7 @@ function App() {
         <Menu menuData={initialMenu} handleAddBtnEvent={handleAddBtn} />
         <Cart
           cartData={cartItems}
-          cartCost = {cartCost}
+          cartCost={cartCost}
           handleAddBtnEvent={handleAddBtn}
           handleRemoveBtnEvent={handleRemoveBtn}
         />

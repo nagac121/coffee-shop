@@ -44,7 +44,7 @@ const Cart = ({
               <span>Item Cost with tax: </span>
               <span>
                 {cartItem.cartCount *
-                  (cartItem.cost + cartItem.taxPercent / 100)}
+                  (cartItem.cost + cartItem.cost * (cartItem.taxPercent / 100))}
               </span>
             </div>
           </div>
