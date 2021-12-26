@@ -37,6 +37,10 @@ const Cart = ({
               </IconButton>
             </span>
             <div>
+              <label>Sales Tax: </label>
+              <span>{cartItem.taxPercent}</span>
+            </div>
+            <div>
               <span>Item Cost with tax: </span>
               <span>
                 {cartItem.cartCount *
