@@ -1,5 +1,5 @@
 // react lib
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // css
 import "./App.css";
 // components
@@ -61,6 +61,18 @@ const initialMenu = [
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartCost, setCartCost] = useState(0);
+
+  useEffect(() => {
+    // console.log("cartItems: ", cartItems);
+    const totalCartAmt = cartItems.reduce((acc, current) => {
+      // console.log("current: ",current);
+      acc += current.cartCount * (current.cost + current.cost * (current.taxPercent / 100));
+      return acc;
+    }, 0);
+    // console.log("totalCartAmt: ", totalCartAmt.toFixed(2));
+    setCartCost(totalCartAmt.toFixed(2))
+  }, [cartItems]);
 
   const handleAddBtn = (addItem) => {
     // console.log("handleAddBtn");
@@ -112,6 +124,7 @@ function App() {
         <Menu menuData={initialMenu} handleAddBtnEvent={handleAddBtn} />
         <Cart
           cartData={cartItems}
+          cartCost = {cartCost}
           handleAddBtnEvent={handleAddBtn}
           handleRemoveBtnEvent={handleRemoveBtn}
         />

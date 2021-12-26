@@ -72,10 +72,10 @@ code {
   padding: 5px 10px 10px;
 }
 
-/* .cart__item--label{
-  margin: 0px 0px 10px 0px;
-  text-align: right;
-} */
+.cart__item--cart-empty-msg{
+  margin: 50px;
+  background: lightgoldenrodyellow;
+}
 
 .cart__item--qty-icon {
   vertical-align: middle;

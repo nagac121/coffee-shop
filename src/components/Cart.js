@@ -2,7 +2,12 @@ import IconButton from "@mui/material/IconButton";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
 import RemoveSharpIcon from "@mui/icons-material/RemoveSharp";
 
-const Cart = ({ cartData, handleAddBtnEvent, handleRemoveBtnEvent }) => {
+const Cart = ({
+  cartData,
+  cartCost,
+  handleAddBtnEvent,
+  handleRemoveBtnEvent,
+}) => {
   // console.log("cart data: ", cartData);
   return (
     <div className="cart">
@@ -34,12 +39,23 @@ const Cart = ({ cartData, handleAddBtnEvent, handleRemoveBtnEvent }) => {
             <div>
               <span>Item Cost with tax: </span>
               <span>
-                {cartItem.cartCount * (cartItem.cost +  (cartItem.taxPercent / 100))}
+                {cartItem.cartCount *
+                  (cartItem.cost + cartItem.taxPercent / 100)}
               </span>
             </div>
           </div>
         );
       })}
+      <div>
+        {Math.round(cartCost) ? (
+          <>
+            <span>Total Cost</span>
+            <span>{cartCost}</span>
+          </>
+        ) : (
+          <div className="cart__item--cart-empty-msg">Add cart items!</div>
+        )}
+      </div>
     </div>
   );
 };
