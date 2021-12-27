@@ -50,7 +50,8 @@ const Cart = ({
                 {parseFloat(
                   cartItem.cartCount *
                     (cartItem.cost +
-                      cartItem.cost * (cartItem.taxPercent / 100)) - (cartItem.discountApplied / 100)
+                      cartItem.cost * (cartItem.taxPercent / 100)) -
+                    cartItem.discountApplied / 100
                 ).toFixed(2)}
               </span>
             </div>
