@@ -38,15 +38,19 @@ const Cart = ({
             </span>
             <div>
               <label>Sales Tax: </label>
-              <span>{cartItem.taxPercent}</span>
+              <span>{cartItem.taxPercent}%</span>
             </div>
             <div>
-              <span>Item Cost with tax: </span>
+              <label>Discount applied: </label>
+              <span>{cartItem.discountApplied}%</span>
+            </div>
+            <div>
+              <span>Item Cost + tax - Discount: </span>
               <span>
                 {parseFloat(
                   cartItem.cartCount *
                     (cartItem.cost +
-                      cartItem.cost * (cartItem.taxPercent / 100))
+                      cartItem.cost * (cartItem.taxPercent / 100)) - (cartItem.discountApplied / 100)
                 ).toFixed(2)}
               </span>
             </div>

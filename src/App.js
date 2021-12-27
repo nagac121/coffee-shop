@@ -12,6 +12,7 @@ const initialMenu = [
     itemName: "Bread",
     cost: 20,
     taxPercent: 1,
+    discountApplied: 0,
     combo: [
       {
         itemId: 2,
@@ -31,6 +32,7 @@ const initialMenu = [
     itemName: "Coffee",
     cost: 10,
     taxPercent: 2,
+    discountApplied: 0,
     cartCount: 0,
   },
   {
@@ -38,6 +40,7 @@ const initialMenu = [
     itemName: "Juice",
     cost: 15,
     taxPercent: 2,
+    discountApplied: 0,
     cartCount: 0,
   },
   {
@@ -45,6 +48,7 @@ const initialMenu = [
     itemName: "Cream",
     cost: 0,
     taxPercent: 0,
+    discountApplied: 0,
     cartCount: 0,
   },
   {
@@ -52,6 +56,7 @@ const initialMenu = [
     itemName: "Sugar",
     cost: 0,
     taxPercent: 0,
+    discountApplied: 0,
     cartCount: 0,
   },
 ];
@@ -68,7 +73,7 @@ function App() {
       // console.log("current: ",current);
       acc +=
         current.cartCount *
-        (current.cost + current.cost * (current.taxPercent / 100));
+        (current.cost + current.cost * (current.taxPercent / 100)) - (current.discountApplied / 100);
       return acc;
     }, 0);
     // console.log("totalCartAmt: ", totalCartAmt.toFixed(2));
@@ -107,19 +112,20 @@ function App() {
     // console.log("cartItemsArr: ", cartItemsArr);
     // DISCOUNT
     const { discountToBeApplied, discountItemId } = getComboDiscount(addItem);
-    console.log("discountToBeApplied: ", discountToBeApplied);
+    // console.log("discountToBeApplied: ", discountToBeApplied);
+
     // apply discount on add-item
     for (let i = 0; i < cartItemsArr.length; i++) {
       const comboItems = cartItemsArr[i].combo;
       if (comboItems) {
         for (let j = 0; j < comboItems.length; j++) {
-          if(comboItems[j].itemId === discountItemId){
-            cartItemsArr[i].discountApplied = discountToBeApplied
+          if (comboItems[j].itemId === discountItemId) {
+            cartItemsArr[i].discountApplied = discountToBeApplied;
           }
         }
       }
     }
-    console.log("cartItemsArr: ", cartItemsArr);
+    // console.log("cartItemsArr: ", cartItemsArr);
     setCartItems(cartItemsArr);
   };
 

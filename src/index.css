@@ -65,7 +65,7 @@ header {
 /* cart */
 .cart {
   border: 1px solid darkblue;
-  height: 50vh;
+  max-height: 75vh;
   margin: 0px 10px 10px 50px;
   overflow: scroll;
   padding: 5px;
